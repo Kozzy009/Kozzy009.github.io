@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#3e2d54">
+<title>TYPE64｜20問クイック + 64問詳細診断</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header><div class="logo">TYPE64</div><div class="small">20問クイック → 64問詳細 → AI画像プロンプト</div></header>
+
+<section id="start" class="card">
+  <span class="badge">公開向け・独自4軸ツール</span>
+  <h1>まず20問でざっくり。<br>必要なら64問で詳しく。</h1>
+  <p class="lead">最初の20問で簡易結果を表示し、その後「詳しく分析を続ける」を選ぶと、64問すべてに基づく詳細結果を見られます。最後に、外部AIへ貼り付けて使える「タロットカード風イメージイラスト」用プロンプトも表示します。</p>
+
+  <div class="grid">
+    <div class="stat"><b>20問</b>簡易結果</div>
+    <div class="stat"><b>64問</b>詳細分析</div>
+    <div class="stat"><b>AI用</b>画像プロンプト</div>
+  </div>
+
+  <div class="two">
+    <div>
+      <label for="nickname">呼び名（任意）</label>
+      <input id="nickname" placeholder="例：KOZZY" />
+    </div>
+    <div>
+      <label for="motif">入れたいモチーフ（任意）</label>
+      <input id="motif" placeholder="例：月、本、鍵、青い花" />
+    </div>
+  </div>
+  <label for="appearance">外見・雰囲気メモ（任意）</label>
+  <textarea id="appearance" placeholder="例：中性的な大人、落ち着いた表情、紺と金を基調、知的で静かな雰囲気"></textarea>
+
+  <div class="notice">
+    <b>注意：</b>このアプリは自己理解のための独自ツールです。既存の特定検査の公式版・公認版・互換版ではありません。結果は能力や優劣を示すものではなく、採用・医療・診断・適職断定に用いるものでもありません。
+  </div>
+
+  <div class="actions">
+    <button id="startBtn" class="primary">20問からはじめる</button>
+    <button id="resumeBtn" class="secondary hidden">途中から再開</button>
+  </div>
+</section>
+
+<section id="quiz" class="card hidden">
+  <div class="progressMeta"><span id="qnum"></span><span id="phaseLabel">20問の簡易分析</span></div>
+  <div class="progress"><div id="bar"></div></div>
+  <div class="prompt">あなたにとって、より自然なのはどちらですか？</div>
+  <div class="choices">
+    <button id="choiceA" class="choice"><span>A</span><b id="textA"></b></button>
+    <button id="choiceB" class="choice"><span>B</span><b id="textB"></b></button>
+  </div>
+  <div class="nav">
+    <button id="backBtn" class="secondary">← 戻る</button>
+    <button id="nextBtn" class="primary" disabled>次へ →</button>
+  </div>
+</section>
+
+<section id="quick" class="card hidden">
+  <span class="badge">20問の簡易結果</span>
+  <div class="heroCode">
+    <div class="code" id="quickCode"></div>
+    <div class="subcode">20問時点の仮の回答コード</div>
+  </div>
+  <div id="quickAxes"></div>
+  <div class="resultBox">
+    <h3 id="quickTypeName"></h3>
+    <p id="quickSummary"></p>
+  </div>
+  <div class="actions">
+    <button id="continueBtn" class="primary">詳しく分析を続ける（残り44問）</button>
+    <button id="quickRestartBtn" class="secondary">最初からやり直す</button>
+  </div>
+</section>
+
+<section id="full" class="card hidden">
+  <span class="badge">64問の詳細結果</span>
+  <div class="heroCode">
+    <div class="code" id="fullCode"></div>
+    <div class="subcode">64問に基づく回答コード</div>
+  </div>
+
+  <div class="resultBox">
+    <h3 id="fullTypeName"></h3>
+    <p id="fullSummary"></p>
+    <div class="chips" style="margin-top:12px">
+      <div class="chip" id="strengthChip"></div>
+      <div class="chip" id="watchChip"></div>
+    </div>
+  </div>
+
+  <h2 style="margin-top:24px">4軸の詳細</h2>
+  <div id="fullAxes"></div>
+
+  <div style="margin-top:24px">
+    <h2>自分で最終確認する</h2>
+    <p>集計結果は、その日の状態や置かれた役割の影響も受けます。各軸の説明を読んで、より自分らしい側を選び直せます。</p>
+    <div id="verifyList"></div>
+    <div class="resultBox" style="margin-top:16px">
+      <h3>自己確認後のコード</h3>
+      <div class="code" id="verifiedCode" style="font-size:46px"></div>
+      <p id="verifiedSummary" style="margin-top:8px"></p>
+    </div>
+  </div>
+
+  <div class="promptBox">
+    <h2>AIでイメージイラストを作るためのプロンプト</h2>
+    <p>下の文章をコピーして、ChatGPTやGeminiなどの画像生成AIへ貼り付けて使えます。著作権に配慮し、<b>既存の特定タロットデッキを模倣しない</b>前提にしています。</p>
+    <textarea id="imagePrompt" class="copyArea"></textarea>
+    <div class="actions">
+      <button id="copyPromptBtn" class="primary">プロンプトをコピー</button>
+      <button id="copySummaryBtn" class="secondary">結果要約をコピー</button>
+      <button id="restartBtn" class="ghost">最初からやり直す</button>
+    </div>
+  </div>
+
+  <div class="footerNote">
+    画像生成プロンプトは、診断結果をもとにした象徴的なイメージ作成を支援するためのものです。本人の実物写真や正確な肖像再現を意図するものではありません。必要なら外見メモや好きな色・小物を追加して調整してください。
+  </div>
+</section>
+</div>
+<script src="qdata.js"></script>
+<script src="typedata.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "KOZZY’S ROOM",
+  "short_name": "KOZZY’S ROOM",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#e4d6b6",
+  "theme_color": "#211a16",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
