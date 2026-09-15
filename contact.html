@@ -16,7 +16,7 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="stylesheet" href="style.css">
 <style>
-.contact-wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:18px}.contact-card,.privacy-card{background:rgba(255,248,234,.56);border:2px solid var(--ink);padding:22px}.contact-card h2,.privacy-card h2{margin-top:0}.contact-note{padding:14px 16px;border-left:8px solid var(--rust);background:var(--paper2);margin:0 0 20px}.contact-note strong{display:block;margin-bottom:4px}.contact-form{display:grid;gap:15px}.contact-form label{font-weight:700}.contact-form input,.contact-form select,.contact-form textarea{width:100%;margin-top:6px;padding:12px 13px;border:2px solid var(--ink);background:var(--light);color:var(--ink);font:inherit}.contact-form textarea{min-height:180px;resize:vertical}.contact-form button{border:2px solid var(--ink);background:#8e8170;color:#f7eedb;padding:12px 16px;font:18px "Bebas Neue",sans-serif;letter-spacing:.1em;cursor:not-allowed}.contact-help{font-size:13px;color:#5d5045;margin:0}.privacy-card ul{padding-left:1.2em}.privacy-card li+li{margin-top:8px}.privacy-card .button{margin-top:8px}@media(max-width:760px){.contact-wrap{grid-template-columns:1fr}}
+.contact-wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:18px}.contact-card,.privacy-card{background:rgba(255,248,234,.56);border:2px solid var(--ink);padding:22px}.contact-card h2,.privacy-card h2{margin-top:0}.contact-note{padding:14px 16px;border-left:8px solid var(--rust);background:var(--paper2);margin:0 0 20px}.contact-note strong{display:block;margin-bottom:4px}.contact-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px}.contact-help{font-size:13px;color:#5d5045;margin:0}.privacy-card ul{padding-left:1.2em}.privacy-card li+li{margin-top:8px}.privacy-card .button{margin-top:8px}@media(max-width:760px){.contact-wrap{grid-template-columns:1fr}.contact-actions{align-items:stretch}.contact-actions .button{width:100%;text-align:center}}
 </style>
 <title>CONTACT | KOZZY’S ROOM</title><meta name="description" content="KOZZY’S ROOMのサイト・アプリ・掲載内容に関するお問い合わせ案内。"></head><body><a class="skip-link" href="#main-content">本文へ移動</a><header class="site-header">
 <div class="header-inner">
@@ -31,14 +31,10 @@
 <h2>お問い合わせ</h2>
 <div class="contact-note"><strong>このフォームの対象</strong>KOZZY’S ROOMのサイト、アプリ、掲載内容、その他の運営上のお問い合わせです。</div>
 <p>個別の福祉相談、医療相談、緊急のご相談には対応していません。氏名・住所・電話番号・病歴など、問い合わせに不要な個人情報は入力しないでください。第三者を特定できる情報も送信しないでください。</p>
-<form class="contact-form" aria-label="お問い合わせフォーム">
-<label>お名前またはニックネーム（任意）<input type="text" name="name" autocomplete="name" disabled></label>
-<label>返信用メールアドレス<input type="email" name="email" autocomplete="email" disabled></label>
-<label>お問い合わせ種別<select name="category" disabled><option>サイトについて</option><option>アプリについて</option><option>掲載内容について</option><option>その他</option></select></label>
-<label>お問い合わせ内容<textarea name="message" disabled></textarea></label>
-<button type="button" disabled>FORM SETUP IN PROGRESS</button>
-<p class="contact-help">現在、送信先の外部フォームサービスを安全に接続する準備中です。メールアドレスをWebページへ直接掲載しない方式で運用します。</p>
-</form>
+<div class="contact-actions">
+<a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdyzZBMA7f0kIZHXiXkV1D2We5THl1X0RpEwhEnyY4jTKnQWg/viewform?usp=header" target="_blank" rel="noopener noreferrer">GOOGLE FORM →</a>
+<p class="contact-help">フォームはGoogleフォームで開きます。返信用メールアドレスなど、必要な情報だけを入力してください。</p>
+</div>
 </div>
 <aside class="privacy-card">
 <h2>PRIVACY</h2>
