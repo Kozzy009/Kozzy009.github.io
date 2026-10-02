@@ -35,6 +35,12 @@
 .current-detail ul{margin:0;padding-left:1.2em}
 .current-status{margin-top:24px;padding:18px 20px;border:2px solid var(--ink);border-left:9px solid var(--mustard);background:var(--paper2)}
 .current-status strong{display:block;margin-bottom:7px;font-family:'Archivo Black','Noto Sans JP',sans-serif}
+.current-movie{margin-top:26px;max-width:880px}
+.current-movie-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:10px;border-bottom:3px solid var(--ink);padding-bottom:8px}
+.current-movie-head strong{font-family:'Archivo Black','Noto Sans JP',sans-serif;font-size:20px}
+.current-movie-head span{font-family:'Bebas Neue',sans-serif;letter-spacing:.1em;font-size:18px;color:var(--rust)}
+.current-movie video{display:block;width:100%;height:auto;background:var(--dark);border:3px solid var(--ink);box-shadow:7px 7px 0 var(--mustard)}
+.current-movie p{margin:14px 0 0;line-height:1.8}
 @media(max-width:700px){.current-detail{grid-template-columns:1fr}}
 @media(max-width:600px){.current-project{padding:20px}.current-project-head{grid-template-columns:48px 1fr}.current-project-no{font-size:40px}}
 </style>
@@ -54,6 +60,14 @@
 <div class="current-project-head"><span class="current-project-no">01</span><div><span class="current-project-type">APP DEVELOPMENT</span><h2>じぶんばす</h2></div></div>
 <div class="current-meta"><span><b>開発環境</b> Xcode</span><span><b>現在</b> 実機テスト / TestFlight配布対応</span><span><b>紹介動画</b> 作成済み</span></div>
 <p class="current-summary">バスで出かける人の「降りる場所が近づいたら知らせてほしい」を支えるiOSアプリ。登録したバス停などの地点に近づくとGPSで検知し、通知・音・振動で知らせます。軽度知的障害のある人、高齢者、ひとりでの移動に不安がある人にも使いやすいよう、ひらがなを中心にした分かりやすい表示と、やわらかなパステル調の画面、誤操作しにくい操作を大切にしています。</p>
+<div class="current-movie" aria-labelledby="jibunbasu-movie-title">
+<div class="current-movie-head"><strong id="jibunbasu-movie-title">じぶんばす 紹介動画</strong><span>30 SEC MOVIE</span></div>
+<video controls playsinline preload="metadata" aria-label="じぶんばす 30秒紹介動画">
+<source src="assets/images/jibunbasu_30sec_intro.mp4" type="video/mp4">
+お使いのブラウザは動画再生に対応していません。
+</video>
+<p>「じぶんばす」の目的と使い方を、30秒で紹介しています。</p>
+</div>
 <div class="current-detail">
 <section><h3>MAIN FEATURES / 主な機能</h3><ul>
 <li>登録した地点へのGPS接近通知</li>
