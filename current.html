@@ -27,6 +27,15 @@
 .current-meta{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
 .current-meta span{display:inline-block;border:2px solid var(--ink);background:var(--paper2);padding:7px 10px;font-weight:900}
 .current-meta b{font-family:'Bebas Neue','Noto Sans JP',sans-serif;letter-spacing:.06em;margin-right:6px}
+.current-summary{margin:24px 0 0;font-size:17px;line-height:1.95;max-width:880px}
+.current-detail{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.current-detail section{border-top:3px solid var(--ink);padding-top:16px}
+.current-detail h3{margin:0 0 10px;font-family:'Bebas Neue','Noto Sans JP',sans-serif;font-size:22px;letter-spacing:.06em}
+.current-detail p,.current-detail li{line-height:1.85}
+.current-detail ul{margin:0;padding-left:1.2em}
+.current-status{margin-top:24px;padding:18px 20px;border:2px solid var(--ink);border-left:9px solid var(--mustard);background:var(--paper2)}
+.current-status strong{display:block;margin-bottom:7px;font-family:'Archivo Black','Noto Sans JP',sans-serif}
+@media(max-width:700px){.current-detail{grid-template-columns:1fr}}
 @media(max-width:600px){.current-project{padding:20px}.current-project-head{grid-template-columns:48px 1fr}.current-project-no{font-size:40px}}
 </style>
 </head><body><a class="skip-link" href="#main-content">本文へ移動</a><header class="site-header">
@@ -43,7 +52,20 @@
 <div class="current-projects">
 <article class="current-project" id="current-01">
 <div class="current-project-head"><span class="current-project-no">01</span><div><span class="current-project-type">APP DEVELOPMENT</span><h2>じぶんばす</h2></div></div>
-<div class="current-meta"><span><b>開発環境</b> Xcode</span></div>
+<div class="current-meta"><span><b>開発環境</b> Xcode</span><span><b>現在</b> 実機テスト / TestFlight配布対応</span><span><b>紹介動画</b> 作成済み</span></div>
+<p class="current-summary">バスで出かける人の「降りる場所が近づいたら知らせてほしい」を支えるiOSアプリ。登録したバス停などの地点に近づくとGPSで検知し、通知・音・振動で知らせます。軽度知的障害のある人、高齢者、ひとりでの移動に不安がある人にも使いやすいよう、ひらがなを中心にした分かりやすい表示と、やわらかなパステル調の画面、誤操作しにくい操作を大切にしています。</p>
+<div class="current-detail">
+<section><h3>MAIN FEATURES / 主な機能</h3><ul>
+<li>登録した地点へのGPS接近通知</li>
+<li>通知距離のカスタマイズ</li>
+<li>音・振動によるお知らせ</li>
+<li>ワンタップでの通知停止とスヌーズ</li>
+<li>複数地点・グループの登録</li>
+<li>注意事項や写真の表示</li>
+</ul></section>
+<section><h3>DEVELOPMENT / 開発中</h3><p>SwiftUI、CoreLocation、UserNotifications、MapKitを使い、既存のXcodeプロジェクトをベースに開発中。実機でのGPS監視や通知、権限取得、端末内保存などを確認しながら、Version 1.0とTestFlight配布に向けて調整しています。</p></section>
+</div>
+<div class="current-status"><strong>実機テストとTestFlight配布対応</strong>アプリの目的や基本的な使い方が伝わる説明動画も作成。実際の端末で「登録する → 移動する → 近づいたら知らせる」という流れを確認しながら、通知の分かりやすさと操作のしやすさを詰めています。</div>
 </article>
 </div>
 </section>
